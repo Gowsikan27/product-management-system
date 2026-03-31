@@ -111,7 +111,6 @@ export default function DashboardPage() {
     }
 
     void loadUserAndSummary();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -120,7 +119,6 @@ export default function DashboardPage() {
     }
 
     void loadProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, search, sortBy, sortOrder, minPrice, maxPrice]);
 
   useEffect(() => {
@@ -132,7 +130,7 @@ export default function DashboardPage() {
     }, 15000);
 
     return () => window.clearInterval(interval);
-  }, [router]);
+  }, []);
 
   async function loadUserAndSummary() {
     setLoadingSummary(true);

@@ -22,7 +22,7 @@ export default function LoginPage() {
     if (hasToken()) {
       router.replace("/dashboard");
     }
-  }, [router]);
+  }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

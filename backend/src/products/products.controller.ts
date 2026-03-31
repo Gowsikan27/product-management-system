@@ -30,17 +30,17 @@ export class ProductsController {
     return this.productsService.create(ownerId, createProductDto);
   }
 
+  @Get('summary')
+  getSummary(@GetUser('sub') ownerId: string) {
+    return this.productsService.getSummary(ownerId);
+  }
+
   @Get()
   findAll(
     @GetUser('sub') ownerId: string,
     @Query() query: QueryProductsDto,
   ) {
     return this.productsService.findAll(ownerId, query);
-  }
-
-  @Get('summary')
-  getSummary(@GetUser('sub') ownerId: string) {
-    return this.productsService.getSummary(ownerId);
   }
 
   @Get(':id')
